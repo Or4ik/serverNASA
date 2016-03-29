@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CookiesHome</title>
+		<meta charset="utf-8"/>
+		<script type="text/javascript">
+		window.onload = function(){
+			var button = document.getElementById('submit');
+			var input = document.getElementById('inputText');
+			var cookieVal = document.getElementById('cookie');
+			
+
+			button.addEventListener('click', function(){
+				var newValue = parseInt(input.value);
+
+				if (isNaN(newValue) == true) {
+					alert(input.value + ' не число!');
+				}else{
+
+					function getCookie(name) {
+  					var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+  					return matches ? decodeURIComponent(matches[1]) : undefined;
+					}
+
+					var checkCookie=getCookie("value");
+    				if (checkCookie==undefined) {
+        				document.cookie = 'value=' + newValue;
+    				}else{
+    					var result = parseInt(checkCookie) + newValue;
+    					document.cookie = 'value=' + result;
+    				}
+				}
+
+				cookieVal.innerHTML = document.cookie;
+			});
+
+		};
+		</script>
+	</head>
+	<body>
+		<div>Cookies:</div>
+		<input id="inputText" type="text" size="40"></input>
+		<button id="submit">Submit</button>
+		<div id="cookie"></div>
+	</body>
+</html>

@@ -4,7 +4,7 @@
 		<title>server</title>
 		<meta charset="utf-8"/>
 		<script type="text/javascript" src="js/xhr.js"></script>
-		<script type="text/javascript" src="js/script.js"></script>
+		<script type="text/javascript" src="js/script2.js"></script>
 	</head>
 	<body>
 		<button id="send-request">change content</button>
@@ -12,18 +12,28 @@
 		<button id="show-mars-images-2">Page 2</button>
 		<button id="show-mars-images-3">Page 3</button>
 		<br>
-		<select id="selector-page">
-			<option>Page...</option>
+		<p>Select Page:</p><select id="selector-page">
 			<option value="1">Page 1</option>
 			<option value="2">Page 2</option>
 			<option value="3">Page 3</option>
 		</select>
 		<br>
-		<select id="selector-sol">
-			<option value="1000">Sol...</option>
+		<p>Select Sol:</p><select id="selector-sol">
+			<option value="1000">Sol 1000</option>
+			<option value="1030">Sol 1030</option>
+			<option value="1050">Sol 1050</option>
+			<option value="1060">Sol 1060</option>
 			<option value="1080">Sol 1080</option>
 			<option value="1100">Sol 1100</option>
 			<option value="1150">Sol 1150</option>
+		</select>
+		<br>
+		<p>Select Camera:</p><select id="selector-camera">
+			<option value="rhaz">RHAZ</option>
+			<option value="mast">MAST</option>
+			<option value="chemcam">CHEMCAM</option>
+			<option value="mahli">MAHLI</option>
+			<option value="navcam">NAVCAM</option>
 		</select>
 		<br>
 		<div id="mars-images"></div>

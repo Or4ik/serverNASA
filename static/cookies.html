@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Cookies</title>
+		<meta charset="utf-8"/>
+		<script type="text/javascript">
+		window.onload = function(){
+			var button = document.getElementById('submit');
+			var input = document.getElementById('inputText');
+			var cookieVal = document.getElementById('cookie');
+
+			button.addEventListener('click', function(){
+				document.cookie = 'value=' + input.value;
+			});
+			cookieVal.innerHTML = document.cookie;
+		};
+		</script>
+	</head>
+	<body>
+		<div>Cookies:</div>
+		<input id="inputText" type="text" size="40"></input>
+		<button id="submit">Submit</button>
+		<div id="cookie"></div>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>replaceParams</title>
+		<meta charset="utf-8"/>
+		<script type="text/javascript">
+		window.onload = function(){
+			var changeUrl = 'http://asdf?page={page}&sol={sol}&camera={camera}&{page}';
+			var params = {
+				page: 3,
+				sol: 1000,
+				camera: 'phaz'
+			}
+
+			function replaceParams (url, obj){
+				for (var key in obj) {
+					var re = new RegExp('{' + key + '}', 'g');
+					url=url.replace(re, obj[key]);
+				}
+				return url;
+			}
+			
+			console.log(replaceParams(changeUrl, params));
+		};
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
